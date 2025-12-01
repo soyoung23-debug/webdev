@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chareen's WebDev Profile</title>
+
+    <link rel="stylesheet" href="p2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <header>
+        
+        <div>
+            <img src="images/logo.png" alt="logo" style="width: 30px">
+        </div>
+
+        <input type="checkbox" id="chkToggle">
+        <label id="lblToggle" for="chkToggle"> 
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        
+        </nav>
+    </header>
+
+    <div class="home" id="home">
+        
+        <div class="intro">
+            <h1>Hello! I'm Chareen 👋</h1>
+            <p>Full-Stack Developer | Problem-Solver | Environmentalist </p>
+            
+            <div class="home-buttons">
+                <a href="#projects" class="btn" data-tooltip="Don't expect too much, I'm a newbie. 😉">My Projects</a>
+                <a href="mailto:chareenguzman@gmail.com" class="btn" data-tooltip="Please! 📧">Hire me!</a>
+            </div>
+        </div>   
+
+        <img id="profilePic" src="images/profile pic.jpeg" alt="profile picture">
+    </div>
+
+    <div class="about" id="about">
+        <h2>About Me</h2>
+        <p>
+            I am an aspiring Full Stack Developer, currently focused on accelerating my expertise through a comprehensive development bootcamp. 
+            Beyond the code, I am passionate about applying my technical skills to causes that matter, particularly environmental preservation. 
+            Let's connect and build something impactful and sustainable together 🌱🌏
+        </p>
+    </div>
+    <div class="skills" id="skills">
+        <h2>Skills: My Development Arsenal 🛠️</h2>
+        
+        <div class="skills-row">
+        
+            <div class="skill-card">
+                <div class="card-inner">
+
+                    <div class="card-front">
+                        <img src="images/icons8-html-5-50.png" alt="HTML5">
+                        <h3>HTML5</h3>
+                    </div>
+                
+                    <div class="card-back">
+                        <span class="level">Level of Expertise: Intermediate</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+                        <img src="images/icons8-css-logo-50.png" alt="CSS3">
+                        <h3>CSS3</h3>
+                    </div>
+                    
+                    <div class="card-back">
+                        <span class="level">Level of Expertise: Intermediate</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="card-inner">
+                    
+                    <div class="card-front">
+                        <img src="images/icons8-js-50.png" alt="JavaScript">
+                        <h3>JavaScript</h3>
+                    </div>
+
+                    <div class="card-back">
+                        <span class="level">Level of Expertise: Intermediate</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+                        <img src="images/icons8-gitlab-50.png" alt="Gitlab">
+                        <h3>Gitlab</h3>
+                    </div>
+
+                    <div class="card-back">
+                        <span class="level">Level of Expertise: Intermediate</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="images/icons8-github.png" alt="Github">
+                        <h3>Github</h3>
+                    </div>
+
+                    <div class="card-back">
+                        <span class="level">Level of Expertise: Intermediate</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="images/icons8-visual-studio-logo-50.png" alt="VS Code">
+                        <h3>VS Code</h3>
+                    </div>
+
+                    <div class="card-back">
+                        <span class="level">Level of Expertise: Intermediate</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="projects" id="projects">
+        <h2>Projects: The Code I've Conquered 🏆</h2>
+
+        <div class="projects-row">
+        
+            <div class="project-card">
+                <img src="images/project1.png" alt="console app">
+                <h3>QuickCompare App</h3>
+                <p class="description">A command-line interface (CLI) application that enables users to manage product data (create, edit, save and delete) instantly compare unit prices. 
+                    The application automatically identifies the best value product, guaranteeing the most cost-effective purchase.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="images/project2.png" alt="console app">
+                <h3>WebDev Profile</h3>
+                <p class="description">This is my self-built web application, created to showcase the skills I'm developing as a new Full Stack Developer. I focused on making it fully responsive so it looks great on phones and desktops. This will also serve as my evolving tech résumé. As I master new frameworks and concepts, I will be integrating those features and adding new projects. Please check back to follow my development journey. </p>
+            </div>
+
+            <div class="project-card" id="project3">
+                <h3>🚀 Exciting Projects Loading...</h3>
+                <p class="description" id="description3">Still building! I'll be pushing updates to this page very soon!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="experience" id="experience">
+        <h2>Work Experience</h2>
+        <p>
+            I may be new to the tech industry, but I bring 8 years of experience as a Chemical Engineer and Environmental Specialist—roles that demanded analytical thinking, problem-solving, and precision.  
+            I'm currently transitioning into tech with the same energy and discipline, and I'm excited to apply my engineering mindset to real-world software challenges.  
+            You can view my full CV here <a href="file/Chareen Joy S. Guzman - CV.pdf" target="_blank"><img src="images/icons8-cv.png" alt="cv logo"></a>.
+        </p>
+    </div>
+
+    <div class="contact" id="contact">
+        <h2>Let's Connect!</h2>
+
+        <p><i>I'm always open to new opportunities and conversations.</i></p>
+        
+        <p><a href="mailto:chareenguzman@gmail.com"> Email me here </a> or find me on these platforms:</p>
+
+            <div class="links">
+                <a href="https://www.linkedin.com/in/chareen-joy-guzman" target="_blank">
+                    <img src="images/icons8-linkedin.png" alt="icons8-linkedin logo" >
+                </a>
+
+                <a href="https://github.com/soyoung23-debug" target="_blank">
+                    <img src="images/icons8-github.png" alt="icons8-github logo">
+                </a>
+
+                <a href="https://discord.com/users/1390894243249389689" target="_blank">
+                    <img src="images/icons8-discord-50.png" alt="icons8-discord-50 logo">
+                </a>
+            </div>
+    </div>
+
+     <footer>
+        <p>© 2025 Chareen Guzman. All rights reserved.</p>
+        <p>Icons by <a href="https://icons8.com/icons" target="_blank">Icons8</a></p>
+    </footer>
+
+</body>
+</html>

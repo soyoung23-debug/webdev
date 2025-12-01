@@ -1,0 +1,465 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F8F5F0;
+    color: #4F463E;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    padding-top: 80px; 
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #A87C68;
+    padding: 5px 30px;
+    background-color: #EFECE7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999; 
+}
+
+header img {
+    transition: 0.5s ease;
+}
+
+header img:hover {
+    transform: scale(1.7);
+}
+
+#lblToggle {
+    padding: 3px;
+    border-radius: 6px;
+}
+
+#lblToggle div {
+    background: #4F463E;
+    height: 4px;
+    width: 30px;
+    margin: 5px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #4F463E;
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    padding: 2px 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    margin: 8px 0;
+}
+        
+nav {
+    display: none;
+    position: absolute;
+    top: 70px;     
+    right: 30px;   
+    background: #EFECE7;
+    border: 1px solid #A87C68;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+#chkToggle:checked ~ nav {
+    display: block;
+}
+
+#chkToggle {
+    display: none;
+}
+
+.home {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    gap: 50px;
+    text-align: center;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 320px;
+}
+
+.intro h1 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.home-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.btn {
+    padding: 10px 18px;
+    width: 140px;
+    height: 40px;
+    background: #F8F5F0;
+    color: #4F463E;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #A87C68;
+    transition: 0.25s ease;
+    text-align: center;   
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+    background-color: #EFECE7;
+}
+
+.home-buttons a {
+    position: relative;
+    background: #D9C7BA;
+    color: #4F463E;
+}
+
+.home-buttons a::after {
+    content: attr(data-tooltip); 
+    position: absolute;
+    bottom: -45px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4F463E;    
+    color: #EFECE7; 
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    white-space: normal; 
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 50;
+    text-align: center;
+}
+
+.home-buttons a:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.home #profilePic {
+    width: 240px;
+    border-radius: 18px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(79, 70, 62, 0.18);
+}
+
+.about, .skills, .projects, .experience, .contact {
+    /* border: 1px solid #C2B09F;  */
+    padding: 40px 20px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #F8F5F0;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+    text-align: justify;
+}
+.about h2, .skills h2, .projects h2, .experience h2, .contact h2 {
+    margin-bottom: 22px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.skills-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.skill-card, .project-card {
+    background: #F8F5F0;
+    padding: 25px 20px;
+    width: 160px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.skill-card h3, .project-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #4F463E;
+}
+
+.skill-card {
+    perspective: 1000px;
+    height: 160px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.skill-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 14px;
+    background: #F8F5F0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background: #D9C7BA;
+}
+
+.level, .description {
+    padding: 6px 14px;
+    color: #4F463E;
+    border-radius: 15px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.level {
+    background: linear-gradient(to right, #D9C7BA, #EFE8E1);
+}
+
+.description {
+    background: #dccfc6;
+    text-align: justify;
+}
+
+#description3 {
+    background: #dccfc6;
+    text-align: center;
+}
+
+.projects-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    justify-items: center;
+}
+
+.project-card {
+    width: 300px;
+    border: 0.5px dotted #A87C68;
+    transition: 0.5s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    border: 1px solid #A87C68;
+    object-fit: cover;
+}
+
+.project-card img:hover {
+    transform: scale(1.4);
+}
+
+.projects-row .project-card h3 {
+    margin: 12px 0 8px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.experience p {
+    line-height: 1.6;
+}
+
+.experience a img {
+    width: 20px;
+    vertical-align: middle;
+    margin-left: 3px;
+    transition: 0.5s ease;
+}
+
+.experience a img:hover {
+    transform: scale(1.7);
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.contact img {
+    width: 30px;
+    transition: 0.3s ease;
+}
+
+.contact a:hover img {
+    transform: scale(1.5);
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+}
+
+.contact a {
+    text-decoration: none;
+    color: #4F463E;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 15px;
+    background-color: #EFECE7;
+    color: #4F463E;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    border-top: 1px solid #A87C68;
+    margin-top: 30px;
+}
+
+footer a {
+    color: #4F463E;
+    text-decoration: underline;
+    transition: 0.2s ease;
+}
+
+footer a:hover {
+    opacity: 0.7;
+}
+
+
+@media screen and (min-width: 600px) {
+    #lblToggle {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        gap: 12px;
+        background: none;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 0;
+    }
+
+    .home {
+        margin: 10px auto;
+        padding: 20px 60px;
+        flex-direction: row;
+        gap: 60px;
+        max-width: 900px;
+        text-align: left;
+    }
+
+    .home-buttons a::after {
+    white-space: nowrap; 
+    }
+
+    .intro {
+        width: 380px;
+    }
+
+    .intro h1 {
+        font-size: 2rem;
+    }
+
+    #profilePic {
+        width: 260px;
+    }
+
+    .btn {
+        width: 160px;
+        height: 45px;
+        padding: 12px 20px;
+    }
+
+    .about, .skills, .projects, .experience, .contact {
+        max-width: 900px;
+        margin: 60px auto;
+        padding: 50px 30px;
+    }
+
+    .skills-row {
+        gap: 35px;
+    }
+
+    .projects-row {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 35px;
+    }
+
+    #project3 {
+        grid-column: span 2;
+        width: 100%;
+    }
+
+    .skill-card {
+        width: 180px;
+    }
+
+    .project-card {
+        width: 340px;
+    }
+
+    .experience p {
+    line-height: 1.6;
+    }
+
+    .experience a img {
+        width: 20px;
+        height: 20px; 
+    }
+
+    .contact {
+        max-width: 900px;
+        padding: 2px;
+    }
+
+
+}
